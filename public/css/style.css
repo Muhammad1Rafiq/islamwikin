@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "Rabar_033";
+    src: url("../font/Rabar_033/Rabar_033.eot");
+    src: url("../font/Rabar_033/Rabar_033.eot?#iefix") format("embedded-opentype"),
+        url("../font/Rabar_033/Rabar_033.ttf") format("truetype"),
+        url("../font/Rabar_033/Rabar_033.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rabar_015";
+    src: url("../font/Rabar_015/Rabar_015.eot");
+    src: url("../font/Rabar_015/Rabar_015.eot?#iefix") format("embedded-opentype"),
+        url("../font/Rabar_015/Rabar_015.ttf") format("truetype"),
+        url("../font/Rabar_015/Rabar_015.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rabar_008";
+    src: url("../font/Rabar_008/Rabar_008.eot");
+    src: url("../font/Rabar_008/Rabar_008.eot?#iefix") format("embedded-opentype"),
+        url("../font/Rabar_008/Rabar_008.ttf") format("truetype"),
+        url("../font/Rabar_008/Rabar_008.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rabar_004";
+    src: url("../font/Rabar_004/Rabar_004.eot");
+    src: url("../font/Rabar_004/Rabar_004.eot?#iefix") format("embedded-opentype"),
+        url("../font/Rabar_004/Rabar_004.ttf") format("truetype"),
+        url("../font/Rabar_004/Rabar_004.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rabar_006";
+    src: url("../font/Rabar_006/Rabar_006.eot");
+    src: url("../font/Rabar_006/Rabar_006.eot?#iefix") format("embedded-opentype"),
+        url("../font/Rabar_006/Rabar_006.ttf") format("truetype"),
+        url("../font/Rabar_006/Rabar_006.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Rabar_033 !important;
+    background-color: #f0f0f0 !important;
+
+}
+
+#body {
+    border-right: 2px;
+    border-style: ridge;
+    /* border-color: ; */
+
+}
+
+#topbar {
+    padding-bottom: 0px !important;
+}
+
+#main {
+    margin: 10px;
+    float: right;
+    width: 100%;
+}
+
+.menu {
+    padding: 3px 20px 3px 0px !important;
+}
+
+
+
+@media (min-width: 991px) {
+    #sidebar {
+        width: 12%;
+    }
+
+    #presetbtn {
+        display: none;
+    }
+
+    #navbarToggleExternalContent {
+        display: block;
+    }
+    .hideonpc{
+        display: none;
+        visibility: hidden;
+    }
+    #hifzp{
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    #navbarOffcanvasLg {
+        width: 30%;
+    }
+
+    #search {
+        width: 80% !important;
+    }
+
+    .searchContainer {
+        padding-top: auto !important;
+    }
+    .hideonmobile{
+        display: none !important;
+    }
+    
+}
+
+@media (max-width: 550px) {
+    #navbarOffcanvasLg {
+        width: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    .searchContainer {
+        padding-top: 30% !important;
+    }
+    
+}
+@media (max-width: 990px) {
+    #searchResult{
+        width: 75% !important;
+    }    
+}
+
+.searchContainer {
+    padding-top: 10%;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+    
