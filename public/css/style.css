@@ -47,6 +47,17 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Quran_Font';
+    src: url('../font/Quran/me_quran.eot');
+    src: url('../font/Quran/me_quran.eot?#iefix') format('embedded-opentype'),
+        url('../font/Quran/me_quran.woff2') format('woff2'),
+        url('../font/Quran/me_quran.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 body {
     font-family: Rabar_033 !important;
@@ -141,5 +152,8 @@ body {
 a{
     text-decoration: none !important;
 }
-
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
     

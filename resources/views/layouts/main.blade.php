@@ -29,6 +29,8 @@
 </footer>
 <script src="{{asset('js/dark-mode-switch.min.js')}}" type="text/javascript"></script>
 
+    {{-- @flasher_render <!-- this render all flasher notifications. -->
+    @flasher_livewire_render --}}
    @livewireScripts
     {{-- <script type="module">
         import hotwireTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';

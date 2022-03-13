@@ -61,8 +61,9 @@
                                     <select wire:model="fromAyah"
                                         class="form-select form-select-sm d-inline bg-light mb-1" style="width: 6pc"
                                         id="">
-                                        @for ($i = 1; $i <= $ayahsFrom; $i++) <option value="{{$i}}">{{$i}}</option>
-                                            @endfor
+                                        @for ($i = 1; $i <= $ayahsFrom; $i++) 
+                                        <option value="{{$i}}">{{$i}}</option>
+                                        @endfor
                                     </select>
                                 </div>
                             </div>
@@ -71,7 +72,7 @@
                                 <span>تاوەکوو</span>
                                 <div class="">
                                     <label style="width: 3rem">سورەتی</label>
-                                    <select wire:model="toSurah"
+                                    <select wire:change='fromSChanges' wire:model.defer="toSurah"
                                         class="form-select form-select-sm d-inline bg-light mb-1" style="width: 6pc">
                                         @foreach ($surahsTo as $item)
                                         <option value="{{$item->id}}">{{$item->id . ' - ' .$item->name}}</option>
@@ -80,11 +81,11 @@
                                 </div>
                                 <div>
                                     <label style="width: 3rem">ئایەتی</label>
-                                    <select id="TooAAyah" class="form-select form-select-sm d-inline bg-light mb-1"
-                                        style="width: 6pc">
-                                        @for ($i = $toAyahStart; $i <= $ayahsTo; $i++) <option value="{{$i}}">{{$i}}
-                                            </option>
-                                            @endfor
+                                    <select wire:model="toAyah" class="form-select form-select-sm d-inline bg-light mb-1"
+                                        style="width: 6pc" >
+                                        @for ($i = $toAyahStart; $i <= $ayahsTo; $i++) 
+                                           <option value="{{$i}}">{{$i}}</option>
+                                        @endfor
 
                                     </select>
                                 </div>
@@ -92,63 +93,100 @@
                             </div>
 
                         </div>
-                        <div class="form-check col-10 my-1"
-                            style="border-bottom: 1px solid #505050;padding-bottom: 0.5rem!important;"><br>
-                            <input class="form-check-input" type="checkbox" wire:model='bsmla'
-                                id="flexCheckIndeterminate">
-                            <label class="form-check-label" for="flexCheckIndeterminate">هەبوونی بسملة ئەگەر نێوان دوو
-                                سورەت بوو</label>
-                        </div>
-                        <div class="col-10 my-2"
-                            style="border-bottom: 1px solid #505050;padding-bottom: 0.5rem!important;">
-                            <div class="form-group">
-                                <span class="control-label">ماوەی وەستان لەنێوان ئایەتەکاندا</span><span
-                                    style="color: #076bdd"> *بە چرکە</span>
-                                <div class='input-group ' style="width: 7rem">
-                                    <button type="button" style="height: 27px;padding-top: 1;" class="btn btn-secondary"
-                                        onclick="decrease('#waitRange')">-</button>
-                                    <input id="waitRange" class="form-control text-center" style="height: 27px"
-                                        type="text" min="0" max="20" />
-                                    <button type="button" style="height: 27px;padding-top: 1;" class="btn btn-secondary"
-                                        onclick="increase('#waitRange')">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="my-2">
+                        <div class="mt-3">
                             <label style="width: 8rem">ژمارەی دووبارەکردنەوە</label>
                             <div class='input-group ' style="width: 7rem">
                                 <button type="button" style="height: 27px;padding-top: 1;" class="btn btn-secondary"
                                     onclick="decrease('#repeate')">-</button>
                                 <input id="repeate" class="form-control text-center" style="height: 27px" type="text"
                                     value="1" min="1" max="40">
+                                    
                                 <button type="button" style="height: 27px;padding-top: 1;" class="btn btn-secondary"
                                     onclick="increase('#repeate')">+</button>
                             </div>
-
                         </div>
-                        <button onclick="aadbs()">check</button>
+
+                        <div class="form-check col-10 mb-1"
+                            style="padding-bottom: 0.5rem!important;"><br>
+                            <input disabled class="form-check-input" type="checkbox" wire:model='bsmla'
+                                id="flexCheckIndeterminate">
+                            <label class="form-check-label" for="flexCheckIndeterminate">هەبوونی بسملة ئەگەر نێوان دوو
+                                سورەت بوو</label>
+                        </div>
+
                     </div>
                 </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                <button id="check" class="btn btn-outline-info m-2" wire:click='check'>ئامادەکردن</button>
+                </div>
             </div>
+        </div>
     </main>
+
+      <div class="modal fade" id="resultModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-light">
+            <div class="modal-body">
+                <h3 style="color: #198754 !important;">داواکارییەکەت ئامادەکرا!</h3>
+                <ul id="resultResponce" style="font-size: 20px">
+                    <li><span class="text-muted">ژمارەی ئایەتەکان: </span>
+                        <span id="res00" style="color: #ffc107"></span></li>
+                    <li><span class="text-muted">لە سورەتی </span>
+                        <span id="res01" style="color: #fd7e14;"></span>
+                        <span class="text-muted"> ئایەتی: </span>
+                        <span id="res02" style="color: #fd7e14"></span></li>
+                    <li><span class="text-muted">دەق: </span>
+                        <span id="res03" style="font-family: Quran_Font;font-size: 105%"></span></li>
+                    <li><span class="text-muted">تا سورەتی </span>
+                        <span id="res04" style="color: #fd7e14"></span>
+                        <span class="text-muted"> ئایەتی: </span>
+                        <span id="res05" style="color: #fd7e14"></span></li>
+                    <li><span class="text-muted">دەق: </span>
+                        <span id="res06" style="font-family: 'Quran_Font';font-size: 105%"></span></li>
+                    <li><span class="text-muted">بە دەنگی: </span>
+                        <span id="res07"></span></li>
+                    <li><span class="text-muted">دووبارەکردنەوە: </span>
+                        <span id="res08"></span></li>
+                </ul>
+                            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">پاشگەزبوونەوە</button>
+              <button type="button" wire:click='downloadAudio' class="btn btn-outline-primary">داگرتن <i class="bi bi-box-arrow-in-down"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <script>
-        var waitrange = $("#waitRange");
+        
         $(document).ready(function () {
-            var i = parseInt($("#waitRange").val());
-            if(i>=0 && i<=40){}else{
-                $("#waitRange").val(0);
-            }
-            Livewire.emit("wait",parseInt($("#waitRange").val()));
+            var presentbtn = $("#presentHifz");
+            var undobtn = $("#undoHifz");
+            var downloadbtn = $("#downloadHifz");
+            
             var i = parseInt($("#repeate").val());
             if(i>=0 && i<=40){}else{
                 $("#repeate").val(1);
             }
             Livewire.emit("repeate",parseInt($("#repeate").val()));
             
+            Livewire.on('aadb', (i) => {
+                if(i!=null){
+                    $("#res00").html(i[0]); //count
+                    $("#res01").html(i[1]); //from surah
+                    $("#res02").html(i[2]); //from ayah
+                    $("#res03").html(i[3]); //from content
+                    $("#res04").html(i[4]); //to surah
+                    $("#res05").html(i[5]); //to ayah
+                    $("#res06").html(i[6]); //to content
+                    $("#res07").html(i[7]); //reciter
+                    $("#res08").html(i[8]+" جار"); //repeat
+                    $("#resultModal").modal("show");
+                }
+            })
         });
-        function aadbs(){
-            Livewire.emit("senda",parseInt($("#TooAAyah").val()));
-        }
+        
     function increase(param){
         var i = parseInt($(param).val());
         if(i>=0 && i<=40){}else{
@@ -157,7 +195,6 @@
         if(i<$(param).attr("max")){
             $(param).val(i+1);
         }
-        Livewire.emit("wait",parseInt($("#waitRange").val()));
         Livewire.emit("repeate",parseInt($("#repeate").val()));
     }
     function decrease(param){
@@ -165,7 +202,6 @@
         if(i>$(param).attr("min")){
             $(param).val(i-1)
         }
-        Livewire.emit("wait",parseInt($("#waitRange").val()));
         Livewire.emit("repeate",parseInt($("#repeate").val()));
 
     }

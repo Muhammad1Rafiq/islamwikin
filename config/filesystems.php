@@ -38,6 +38,10 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/temp'),
         ],
+        'quran' => [
+            'driver' => 'local',
+            'root' => storage_path('app/quran'),
+        ],
 
         'public' => [
             'driver' => 'local',

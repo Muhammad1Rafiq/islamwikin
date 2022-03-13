@@ -35,6 +35,7 @@ $(document).ready(function () {
     savedfont = parseInt(savedfont, 10);
     fontSelect(savedfont);
 
+    
 });
 
 
