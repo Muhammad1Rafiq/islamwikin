@@ -37,15 +37,26 @@
   color: white;
 }
 
-[data-theme="dark"] .togglebtn{
-  background-color: transparent !important;
-    border: 0px solid;
-    filter: invert(1);
-}
+
 [data-theme="dark"] .text-dark{
   color: #fff;
 }
 .togglebtn{
     border: 0px solid;
     filter: invert(0);
+}
+[data-theme="dark"] .togglebtn{
+  background-color: transparent !important;
+    border: 0px solid;
+    filter: invert(1);
+}
+
+.invertedColor{
+  border: 0px solid;
+  filter: invert(0);
+}
+[data-theme="dark"] .invertedColor{
+background-color: transparent !important;
+  border: 0px solid;
+  filter: invert(1);
 }

@@ -23,7 +23,7 @@
     </nav>
 
     <main class="m-3">
-        <div style="border-radius: 8px" class="card bg-light mx-auto mt-4" id="hifzp">
+        <div style="border-radius: 8px;box-shadow: 0px 0px 8px 0px #888888" class="card bg-light mx-auto mt-4" id="hifzp">
             <div class="card-body p-3">
                 <h2 style="border-bottom:1px solid rgb(80, 80, 80) ">لەبەرکردن</h2>
                 <span>ئەم بەشە بۆ خزمەتی خزمەتکار و لەبەرکارانی وشەکانی خودای پەروەردگار ئامادە کراوە.<br>
@@ -136,17 +136,19 @@
                         <span class="text-muted"> ئایەتی: </span>
                         <span id="res02" style="color: #fd7e14"></span></li>
                     <li><span class="text-muted">دەق: </span>
-                        <span id="res03" style="font-family: Quran_Font;font-size: 105%"></span></li>
+                        <span id="res03" style="font-family: Amiri_Quran_ColoredWeb;font-size: 105%"></span></li>
                     <li><span class="text-muted">تا سورەتی </span>
                         <span id="res04" style="color: #fd7e14"></span>
                         <span class="text-muted"> ئایەتی: </span>
                         <span id="res05" style="color: #fd7e14"></span></li>
                     <li><span class="text-muted">دەق: </span>
-                        <span id="res06" style="font-family: 'Quran_Font';font-size: 105%"></span></li>
+                        <span id="res06" style="font-family: 'Amiri_Quran_ColoredWeb';font-size: 105%"></span></li>
                     <li><span class="text-muted">بە دەنگی: </span>
                         <span id="res07"></span></li>
                     <li><span class="text-muted">دووبارەکردنەوە: </span>
                         <span id="res08"></span></li>
+                        <li><span class="text-muted">بینینی ئایەتەکان: </span>
+                            <a class="btn btn-outline-secondary btn-sm" id="res09" href="" target="_blank">بینین</a></li>
                 </ul>
                             
             </div>
@@ -182,6 +184,7 @@
                     $("#res06").html(i[6]); //to content
                     $("#res07").html(i[7]); //reciter
                     $("#res08").html(i[8]+" جار"); //repeat
+                    $("#res09").attr("href", "/quran/"+i[9]+"?s="+i[2]+"&e="+i[5]); //quran
                     $("#resultModal").modal("show");
                 }
             })

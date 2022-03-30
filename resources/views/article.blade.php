@@ -24,7 +24,7 @@
             <button type="button" class="btn btn-outline-primary btn-sm text-dark my-auto" style="height: 38px;" id="inc">+</button>
             <button type="button" class="btn btn-outline-primary btn-sm text-dark my-auto" style="height: 38px;" id="dec">-</button>
         </div>
-
+<button wire:click='download'>aa</button>
     </div>
     <h6 class="card-subtitle mb-2 text-muted text-dark">{!!$post->sm_disc!!}</h6>
     <div class="card-text text-dark" style="max-width: 100%" id="bodytext">

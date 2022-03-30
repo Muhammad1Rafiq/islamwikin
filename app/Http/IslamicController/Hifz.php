@@ -67,7 +67,7 @@ class Hifz extends Component
         $toContent = DB::select("SELECT `quran` FROM `getquran` where surah = $this->toSurah and ayah = $toAyah")[0]->quran;
         $reciter = DB::select("SELECT * FROM `reciters` where `path` = '$this->reciterR'")[0]->name;
         // dd($fromSurah);
-        $array = [$dataCount,$fromSurah,$fromAyah,$fromContent,$toSurah,$toAyah,$toContent,$reciter,$repeat];
+        $array = [$dataCount,$fromSurah,$fromAyah,$fromContent,$toSurah,$toAyah,$toContent,$reciter,$repeat,$this->fromSurah];
         $this->emit('aadb',$array);
 
     }
@@ -82,7 +82,7 @@ class Hifz extends Component
         header('Content-Type: audio/mpeg');
         for ($j=0; $j < $this->repeatN; $j++) {
             for ($i=0; $i < sizeof($dataRes); $i++) {
-                $data = $data . file_get_contents(storage_path("app/quran/".$this->reciterR."/".$dataRes[$i]->code.".mp3"));
+                $data = $data . file_get_contents(storage_path("app/public/quran/".$this->reciterR."/".$dataRes[$i]->code.".mp3"));
             }
         }   
         

@@ -57,6 +57,47 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: AmiriWeb;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Amiri/amiri-regular.eot?') format('eot'),
+         url('../font/Amiri/amiri-regular.woff2') format('woff2'),
+         url('../font/Amiri/amiri-regular.woff') format('woff'),
+         url('../font/Amiri/amiri-regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Amiri_QuranWeb;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Amiri/amiri-quran.eot?') format('eot'),
+         url('../font/Amiri/amiri-quran.woff2') format('woff2'),
+         url('../font/Amiri/amiri-quran.woff') format('woff'),
+         url('../font/Amiri/amiri-quran.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Amiri_Quran_ColoredWeb;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Amiri/amiri-quran-colored.eot?') format('eot'),
+         url('../font/Amiri/amiri-quran-colored.woff2') format('woff2'),
+         url('../font/Amiri/amiri-quran-colored.woff') format('woff'),
+         url('../font/Amiri/amiri-quran-colored.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Uthmani_Hafs;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Hafs/KFGQPCHafsEx1UthmanicScript-Reg.eot?') format('eot'),
+         url('../font/Hafs/KFGQPCHafsEx1UthmanicScript-Reg.woff2') format('woff2'),
+         url('../font/Hafs/KFGQPCHafsEx1UthmanicScript-Reg.woff') format('woff'),
+         url('../font/Hafs/KFGQPCHafsEx1UthmanicScript-Reg.ttf')  format('truetype');
+}
+
+
 
 
 body {
@@ -125,6 +166,7 @@ body {
         display: none !important;
     }
     
+    
 }
 
 @media (max-width: 550px) {
@@ -143,6 +185,7 @@ body {
     #searchResult{
         width: 75% !important;
     }    
+    
 }
 
 .searchContainer {
@@ -157,3 +200,29 @@ a{
     opacity: 0.4;
 }
     
+
+
+[data-theme="dark"] .everyAyahParent .singleAyah:hover {
+    background: #2a2a2a;
+}
+
+.singleAyah{
+
+}
+.singleWord{
+     /* display: inline-block; */
+     font-family: Uthmani_Hafs;
+     cursor: pointer;
+     padding-left: 1rem !important;
+     line-height: 1.8em  !important;
+}
+.singleAyah .singleWord:hover {
+    color: #b1901f;
+}
+.endOfAyah{
+    cursor: pointer !important;
+    font-family: Uthmani_Hafs;
+}
+/* .tafsir{
+    font-size: 25px !important;
+} */

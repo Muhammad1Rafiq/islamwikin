@@ -20,6 +20,7 @@ class Newpost extends Component
         ]);
         $this->photo->store('photos');
     }
+    
     public $title,$sm_disc,$type,$content;
     public function render()
     {

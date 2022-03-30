@@ -10,6 +10,7 @@ Route::get('/article/{id}', App\Http\IslamicController\Article::class)->name('ar
 Route::get('/last', 'App\Http\Controllers\IslamControll@last')->name("last");
 Route::get('/random', 'App\Http\Controllers\IslamControll@random')->name("random");
 Route::get('/hifz', App\Http\IslamicController\Hifz::class)->name('/hifz');
+Route::get('/quran/{id}', App\Http\IslamicController\Quran::class)->name('/quran');
 Route::get('/test', App\Http\IslamicController\Test::class)->name('/test');
 
 

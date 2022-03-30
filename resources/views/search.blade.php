@@ -21,7 +21,6 @@
             </form>
         </div>
     </nav>
-
     <main>
         <div class="container searchContainer">
             <form action="" class="">
