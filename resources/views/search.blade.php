@@ -23,21 +23,69 @@
     </nav>
     <main>
         <div class="container searchContainer">
-            
-        </div>
+            <div class="d-flex flex-wrap">
+                @foreach ($surahs as $surah)
+                <a class="quran onoverc text-dark" href="/quran/{{$surah->id}}">
+                    {{-- <div class=" mt-1 ">
+                        <i class="bi bi-diamond fs-1">{{$surah->id}}</i>
+                        <span class="position-relative  bg-secondary" style=""></span>
+                    </div> --}}
+                    <span class="position-absolute" style="display:inline">
+                        
+                        <i class="position-absolute bi bi-diamond fs-1"></i>
+                        <div class="text-center" style="width: 1.2em; margin-right: 0.7em; margin-top: 0.5em">
+                            <span >{{$surah->id}}</span>
+                        </div>
+                        
+                    </span>
 
-        {{-- @foreach($articles as $item)
-        <div class="shadow-sm bg-light mx-auto my-2 w-50 p-2" id="searchResult" style="border-radius: 6px;">
-            <div class="d-flex position-relative">
-                <div>
-                    <h5 class="mt-0"><a style="text-decoration: none;" href="">{!!$item->title!!}</a></h5>
-                    <h6 class="card-subtitle text-dark">{!!$item->sm_disc!!}</h6>
-                    <p class="text-muted">{!!substr(strip_tags($item->content),0,130);!!}...</p>
-                    <a href="/article/{!!$item->id!!}" class="stretched-link"></a>
+
+                    <div style="padding: 0.5em 3em 0.5em 0px">
+                        <span>{{$surah->name}}</span>
+                    </div>
+
+                </a>
+                @endforeach
+
+            </div>
+
+
+            {{-- @foreach($articles as $item)
+            <div class="shadow-sm bg-light mx-auto my-2 w-50 p-2" id="searchResult" style="border-radius: 6px;">
+                <div class="d-flex position-relative">
+                    <div>
+                        <h5 class="mt-0"><a style="text-decoration: none;" href="">{!!$item->title!!}</a></h5>
+                        <h6 class="card-subtitle text-dark">{!!$item->sm_disc!!}</h6>
+                        <p class="text-muted">{!!substr(strip_tags($item->content),0,130);!!}...</p>
+                        <a href="/article/{!!$item->id!!}" class="stretched-link"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        @endforeach --}}
+            @endforeach --}}
 
     </main>
+    <style type="text/css">
+        .quran {
+            border: solid 0.1em rgb(68, 68, 68);
+            border-radius: 0.3em;
+            width: 30%;
+            margin: 1em;
+            padding: 0.2em;
+        }
+
+        .quran:hover {
+            border: solid 0.1em rgb(6, 94, 194);
+
+        }
+
+        [data-theme="dark"] .quran:hover {
+            border: solid 0.1em rgb(6, 94, 194);
+
+        }
+
+        [data-theme="dark"] .quran {
+            border: solid 0.1em rgb(145, 145, 145) !important;
+
+        }
+    </style>
 </div>
