@@ -9,8 +9,8 @@
 
     <nav class="navbar navbar-light bg-light fixed-top " style="box-shadow: 5px 13px 20px -9px rgb(0 0 0 / 15%)">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark hideonmobile" href="/">ئیسلامــــــپیدیا</a>
-            <a href="" class="text-dark  my-auto" style="font-size: 20px !important">سورەتی {{$surahs[0]->kuname}} / سورة  {{$surahs[0]->name}}</a>
+            <a class="navbar-brand text-dark hideonmobile onoverc" href="/">ئیسلامــــــپیدیا</a>
+            <a href="/quran/{{$surahs[0]->id}}" class="text-dark  my-auto onoverc" style="font-size: 20px !important">سورەتی {{$surahs[0]->kuname}} / سورة  {{$surahs[0]->name}}</a>
             <form class="d-flex my-auto">
                 
                 <a href="/" class="btn btn-outline-light text-dark btn-sm" style="border: 0px;">گەڕان</a>

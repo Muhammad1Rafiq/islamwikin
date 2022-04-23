@@ -98,11 +98,11 @@ class Hifz extends Component
     }
 
     public function setTSurah(){
-        if ($this->fromSurah != 114) {
-            $this->toSurah = $this->fromSurah+1;
-        }else{
+        
             $this->toSurah = $this->fromSurah;
-        } 
+        
+        $this->ayahTo = Surah::all();
+        $this->ayahTo = $this->ayahTo[$this->toSurah-1];
     }
     public $ayahTo;
     public function fromSChanges(){

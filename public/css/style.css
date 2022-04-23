@@ -97,8 +97,9 @@
          url('../font/Hafs/KFGQPCHafsEx1UthmanicScript-Reg.ttf')  format('truetype');
 }
 
-
-
+.onoverc:hover {
+    color: rgb(115, 128, 43) !important;
+}
 
 body {
     font-family: Rabar_033 !important;

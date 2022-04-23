@@ -9,15 +9,15 @@
             <nav class="navbar navbar-light navbar-expand-lg" style="box-shadow: 5px 13px 20px -9px rgb(0 0 0 / 15%)">
                 <div class="offcanvas offcanvas-start bg-main" style="" tabindex="-1" id="navbarOffcanvasLg"
                     aria-labelledby="navbarOffcanvasLgLabel">
-                    <span><img class="m-auto" src="{{asset('img/img.png')}}" alt=""
+                    <span><img class="m-auto " src="{{asset('img/img.png')}}" alt=""
                             style="display:block; height:7rem !important;" srcset=""></span>
-                    <a href="/welcome" class="list-group-item list-group-item-action menu text-dark"
+                    <a href="/welcome" class="list-group-item list-group-item-action menu text-dark onoverc"
                         style="background-color: rgb(0,0,0,0) !important;border: 0px !important;">دەستپێک</a>
-                    <a href="/last" class="list-group-item list-group-item-action menu text-dark"
+                    <a href="/last" class="list-group-item list-group-item-action menu text-dark onoverc"
                         style="background-color: rgb(0,0,0,0) !important;border: 0px !important;">دوا بابەت</a>
-                    <a href="/random" class="list-group-item list-group-item-action menu text-dark"
+                    <a href="/random" class="list-group-item list-group-item-action menu text-dark onoverc"
                         style="background-color: rgb(0,0,0,0) !important;border: 0px !important;">بابەت بە هەڕەمەکی</a>
-                    <a href="/" class="list-group-item list-group-item-action menu text-dark"
+                    <a href="/" class="list-group-item list-group-item-action menu text-dark onoverc"
                         style="background-color: rgb(0,0,0,0) !important;border: 0px !important;">گەڕان</a>
 
                     <div class="position-absolute bottom-0 start-50 translate-middle-x text-muted hideonpc text-center">
@@ -28,7 +28,7 @@
                         <a href="/welcome" class="list-group-item p-1 text-dark"
                             style="background-color: rgb(0,0,0,0) !important;border: 0px !important;">چوونەژوورەوە</a>
 
-                        <p>ئیسلامــ ــــپیدیا</p>
+                        <p class="onoverc">ئیسلامــ ــــپیدیا</p>
                     </div>
                 </div>
             </nav>
@@ -47,7 +47,7 @@
                             </i>
 
                             <div class=" flex-fill bd-highlight m-auto">
-                                <h2 class="text-dark m-auto">ئیسلامــــــپیدیا</h2>
+                                <a class="text-dark m-auto onoverc h2" href="/">ئیسلامــــــپیدیا</a>
                             </div>
 
                             <div class=" flex-fill bd-highlight bg-main" dir="ltr">

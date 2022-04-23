@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-light bg-light" style="box-shadow: 5px 13px 20px -9px rgb(0 0 0 / 15%)">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark">ئیسلامــــــپیدیا</a>
+            <a class="navbar-brand text-dark onoverc" href="/">ئیسلامــــــپیدیا</a>
             <form class="d-flex my-auto">
                 <div class="col-md-auto form-switch my-1">
                     <input type="checkbox" class="form-check-input darkSwitch" id="darkSwitch" />
@@ -49,7 +49,7 @@
                                 <div class="">
                                     <label style="width: 3rem">سورەتی</label>
                                     <select wire:change='setTSurah' wire:model="fromSurah"
-                                        class="form-select form-select-sm d-inline bg-light mb-1" style="width: 6pc">
+                                        class="form-select form-select-sm d-inline bg-light mb-1" style="width: 8pc">
                                         @foreach ($surahsFrom as $item)
                                         <option value="{{$item->id}}">{{$item->id . ' - ' .$item->name}}</option>
                                         @endforeach
@@ -66,9 +66,21 @@
                                         @endfor
                                     </select>
                                 </div>
+                                <span>تاوەکوو</span>
+                                
+                                <div>
+                                    <label style="width: 3rem">ئایەتی</label>
+                                    <select wire:model="toAyah" class="form-select form-select-sm d-inline bg-light mb-1"
+                                        style="width: 6pc" >
+                                        @for ($i = $toAyahStart; $i <= $ayahsTo; $i++) 
+                                           <option value="{{$i}}">{{$i}}</option>
+                                        @endfor
+
+                                    </select>
+                                </div>
                             </div>
 
-                            <div class="col" style="border-right:1px solid rgb(95, 95, 95)">
+                            {{-- <div class="col" style="border-right:1px solid rgb(95, 95, 95)">
                                 <span>تاوەکوو</span>
                                 <div class="">
                                     <label style="width: 3rem">سورەتی</label>
@@ -90,7 +102,7 @@
                                     </select>
                                 </div>
 
-                            </div>
+                            </div> --}}
 
                         </div>
                         <div class="mt-3">
@@ -106,13 +118,13 @@
                             </div>
                         </div>
 
-                        <div class="form-check col-10 mb-1"
+                        {{-- <div class="form-check col-10 mb-1"
                             style="padding-bottom: 0.5rem!important;"><br>
                             <input disabled class="form-check-input" type="checkbox" wire:model='bsmla'
                                 id="flexCheckIndeterminate">
                             <label class="form-check-label" for="flexCheckIndeterminate">هەبوونی بسملة ئەگەر نێوان دوو
                                 سورەت بوو</label>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
@@ -137,9 +149,7 @@
                         <span id="res02" style="color: #fd7e14"></span></li>
                     <li><span class="text-muted">دەق: </span>
                         <span id="res03" style="font-family: Amiri_Quran_ColoredWeb;font-size: 105%"></span></li>
-                    <li><span class="text-muted">تا سورەتی </span>
-                        <span id="res04" style="color: #fd7e14"></span>
-                        <span class="text-muted"> ئایەتی: </span>
+                    <li><span class="text-muted">تا ئایەتی: </span>
                         <span id="res05" style="color: #fd7e14"></span></li>
                     <li><span class="text-muted">دەق: </span>
                         <span id="res06" style="font-family: 'Amiri_Quran_ColoredWeb';font-size: 105%"></span></li>

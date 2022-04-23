@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-light bg-light" style="box-shadow: 5px 13px 20px -9px rgb(0 0 0 / 15%)">
         <div class="container-fluid">
-            <a class="navbar-brand text-dark">ئیسلامــــــپیدیا</a>
+            <a href="/" class="navbar-brand text-dark onoverc">ئیسلامــــــپیدیا</a>
             <form class="d-flex my-auto">
                 <div class="col-md-auto form-switch my-1">
                     <input type="checkbox" class="form-check-input darkSwitch" id="darkSwitch" />
@@ -23,13 +23,7 @@
     </nav>
     <main>
         <div class="container searchContainer">
-            <form action="" class="">
-                <span><img class="m-auto" src="img/img.png" alt="" style="display:block; height:7rem !important;"
-                        srcset=""></span>
-                <input type="text" wire:model.debounce.700ms="search"
-                    class="form-control text-dark shadow p-3 mb-5 bg-body rounded mx-auto m-4 w-50"
-                    style="border-radius: 5px !important; color:white !important" id="search" placeholder="گەڕان ئەنجام بدە">
-            </form>
+            
         </div>
 
         {{-- @foreach($articles as $item)
