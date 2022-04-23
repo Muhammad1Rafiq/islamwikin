@@ -17,14 +17,14 @@ class Search extends Component
     public function render()
     {
         
-            $data = DB::select("call searchEngine('$this->search')");
+            // $data = DB::select("call searchEngine('$this->search')");
         
         
-        $array = [
-            "articles" => $data
-        ];
+        // $array = [
+        //     "articles" => $data
+        // ];
         
        
-        return view('search', $array)->extends('layouts.main')->section('main');
+        return view('search')->extends('layouts.main')->section('main');
     }
 }

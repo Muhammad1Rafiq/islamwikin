@@ -32,7 +32,7 @@
             </form>
         </div>
 
-        @foreach($articles as $item)
+        {{-- @foreach($articles as $item)
         <div class="shadow-sm bg-light mx-auto my-2 w-50 p-2" id="searchResult" style="border-radius: 6px;">
             <div class="d-flex position-relative">
                 <div>
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @endforeach --}}
 
     </main>
 </div>
